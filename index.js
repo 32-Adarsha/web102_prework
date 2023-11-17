@@ -34,7 +34,6 @@ function addGamesToPage(games) {
 
         // create a new div element, which will become the game card
         const elm = document.createElement('div');
-        console.log(games[i].name)
         // add the class game-card to the list
         elm.classList.add('game-card');
 
@@ -53,7 +52,6 @@ function addGamesToPage(games) {
 }
 
 // call the function we just defined using the correct variable
-console.log(GAMES_JSON);
 addGamesToPage(GAMES_JSON);
 // later, we'll call this function using a different list of games
 
@@ -139,13 +137,14 @@ allBtn.addEventListener('click' , showAllGames)
 const descriptionContainer = document.getElementById("description-container");
 
 // use filter or reduce to count the number of unfunded games
-
-
+var ListUnfunded = GAMES_JSON.filter((game) => {return game.pledged < game.goal;});
 // create a string that explains the number of unfunded games using the ternary operator
-
+var strUnfund = `A total of $${totalRaised.toLocaleString("en-US")} has been raised for ${GAMES_JSON.length} ${GAMES_JSON.length>1? "games":"game"}. Currently, ${ListUnfunded.length} ${ListUnfunded.length>1? "games":"game"} remains unfunded. We need your help to fund these amazing games!`;
 
 // create a new DOM element containing the template string and append it to the description container
-
+var newElem = document.createElement('p');
+newElem.innerHTML = strUnfund;
+document.getElementById("description-container").appendChild(newElem);
 /************************************************************************************
  * Challenge 7: Select & display the top 2 games
  * Skills used: spread operator, destructuring, template literals, sort 
@@ -159,7 +158,12 @@ const sortedGames =  GAMES_JSON.sort( (item1, item2) => {
 });
 
 // use destructuring and the spread operator to grab the first and second games
-
+let [first , second , ...other] = sortedGames
 // create a new element to hold the name of the top pledge game, then append it to the correct element
-
+var FirstElem = document.createElement('p');
+FirstElem.innerHTML = first.name;
+document.getElementById('first-game').appendChild(FirstElem);
 // do the same for the runner up item
+var SecondElem = document.createElement('p');
+SecondElem.innerHTML = second.name;
+document.getElementById('second-game').appendChild(SecondElem);
