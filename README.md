@@ -1,4 +1,4 @@
-# WEB102 Prework - *W*
+# WEB102 Prework - *SimpleWebsite*
 
 Submitted by: **Adarsha Kiran Khadka**
 
