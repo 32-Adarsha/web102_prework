@@ -24,7 +24,7 @@ The following **optional** features are implemented:
 Here's a walkthrough of implemented features:
 
 
-![](https://github.com/Your_Repository_Name/Your_GIF_Name.gif)
+![](https://github.com/32-Adarsha/web102_prework/blob/main/assets/VideoForReadMe.gif)
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with LICEcap  
 
